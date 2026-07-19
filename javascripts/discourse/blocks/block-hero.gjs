@@ -3,6 +3,7 @@ import { service } from "@ember/service";
 import { block } from "discourse/blocks";
 import DButton from "discourse/components/d-button";
 import dIcon from "discourse/helpers/d-icon";
+import { and, not } from "discourse/truth-helpers";
 import { i18n } from "discourse-i18n";
 
 @block("theme:ctguns:hero", {
@@ -36,7 +37,7 @@ export default class BlockHero extends Component {
           {{dIcon "magnifying-glass"}}
           <input type="search" name="q" placeholder={{i18n (themePrefix "hero.search_placeholder")}} />
         </form>
-        {{#if @buttonLink}}
+        {{#if (and @buttonLink (not this.currentUser))}}
           <DButton
             class="btn-primary block-hero__button"
             @href={{@buttonLink}}
