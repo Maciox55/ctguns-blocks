@@ -13,3 +13,10 @@ body {
     background-image: url("#{$site-background-dark}");
   }
 }
+
+// #main-outlet(-wrapper) paints its own opaque background-color (core and/or
+// the active base theme) directly over body, hiding the image above.
+#main-outlet-wrapper,
+#main-outlet {
+  background: transparent !important;
+}
