@@ -6,16 +6,10 @@
   "modifiers": {
     "custom_homepage": true,
     "svg_icons": [
-      "magnifying-glass",
-      "sliders-horizontal",
-      "shield-check",
-      "circle-help",
-      "smartphone",
-      "life-buoy",
-      "book-open",
       "arrow-right",
-      "headphones",
-      "house"
+      "house",
+      "calendar",
+      "flame"
     ]
   }
 }

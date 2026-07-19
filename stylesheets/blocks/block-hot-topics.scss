@@ -1,20 +1,45 @@
 .block-hot-topics {
-  &__layout {
-    @include card;
+  background: var(--secondary);
+  border-radius: var(--d-border-radius-large);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--card-padding);
+    border-bottom: 1px solid var(--primary-200);
+  }
+
+  &__header-icon {
+    display: flex;
+    color: var(--love);
   }
 
   &__title {
-    @include card-header;
     @include section-title;
     font-size: var(--font-up-1);
   }
 
+  &__body {
+    padding: var(--card-padding);
+  }
+
   &__list {
-    @include card-body;
     list-style: none;
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-3);
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: var(--font-0);
+  }
+
+  &__meta {
+    margin-top: var(--space-1);
   }
 }

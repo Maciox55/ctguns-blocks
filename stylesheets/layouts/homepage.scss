@@ -6,22 +6,18 @@
     grid-template-areas:
       "category-cards"
       "latest-discussions"
-      "homepage-right"
-      "watch-listen"
-      "cta-banner";
+      "homepage-right";
     margin-block: var(--space-6);
   }
 
   // ponytail: assumes core wraps homepage-blocks in a CSS container named
-  // "homepage-blocks" (matching the discourse-theme-skills reference theme).
-  // Verify on-site; if the query never matches, this just stays single-column.
+  // "homepage-blocks" (matching meta.discourse.org's own layout). Verify
+  // on-site; if the query never matches, this just stays single-column.
   @container homepage-blocks (width > 800px) {
     &__layout {
       grid-template-areas:
         "category-cards category-cards"
-        "latest-discussions homepage-right"
-        "watch-listen watch-listen"
-        "cta-banner cta-banner";
+        "latest-discussions homepage-right";
       grid-template-columns: 2fr 1fr;
     }
   }
@@ -33,14 +29,6 @@
 
     &--latest-discussions {
       grid-area: latest-discussions;
-    }
-
-    &--watch-listen {
-      grid-area: watch-listen;
-    }
-
-    &--cta-banner {
-      grid-area: cta-banner;
     }
   }
 

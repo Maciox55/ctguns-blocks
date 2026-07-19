@@ -2,23 +2,9 @@ en:
   theme_metadata:
     description: "CTGuns.org custom homepage, built on the Blocks API"
     settings:
-      cta_link: "URL for the call-to-action button"
-      category_card_1: "Category ID for the first category card (0 = hidden). Find the ID in the category's URL or admin edit page."
-      category_card_1_icon: "Icon name for the first category card"
-      category_card_1_color: "Background color (hex, no #) for the first card's icon"
+      category_card_1: "Category ID for the first category card (0 = hidden). Find the ID in the category's URL or admin edit page. Icon/color come from the category's own settings."
       category_card_2: "Category ID for the second category card (0 = hidden)"
-      category_card_2_icon: "Icon name for the second category card"
-      category_card_2_color: "Background color (hex, no #) for the second card's icon"
       category_card_3: "Category ID for the third category card (0 = hidden)"
-      category_card_3_icon: "Icon name for the third category card"
-      category_card_3_color: "Background color (hex, no #) for the third card's icon"
-  hero:
-    title: "Welcome to CTGuns"
-    title_loggedin: "Welcome back, %{username}!"
-    subtitle: "Connecticut's gun community — builds, classifieds, FFLs, and events."
-    button_label: "Join now"
-    search_placeholder: "Search"
-    search_filters: "Search filters"
   category_cards:
     link_text: "All categories"
   homepage:
@@ -32,14 +18,5 @@ en:
       button_label: "See leaderboard"
     events:
       title: "Latest events"
-      button_label: "Details"
-      link_label: "See all events"
-    cta:
-      title: "Secure by Design:"
-      description: "Our free guide to building privacy-focused communities"
-      button_label: "Download your copy"
-  watch_listen:
-    title: "Watch & Listen"
-    watch_now: "Watch now"
   sidebar:
     home_link: "Home"

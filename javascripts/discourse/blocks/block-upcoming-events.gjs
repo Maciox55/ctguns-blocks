@@ -1,22 +1,21 @@
 import Component from "@glimmer/component";
 import { block } from "discourse/blocks";
 import AsyncContent from "discourse/components/async-content";
-import DButton from "discourse/components/d-button";
+import dIcon from "discourse/helpers/d-icon";
 import { ajax } from "discourse/lib/ajax";
 import { bind } from "discourse/lib/decorators";
-import { longDate, shortDateNoYear } from "discourse/lib/formatter";
 import { or } from "discourse/truth-helpers";
 import { i18n } from "discourse-i18n";
 
-// Requires the discourse-post-event / discourse-calendar plugin.
+// Requires the discourse-post-event / discourse-calendar plugin. Markup
+// matches meta.discourse.org's live block-upcoming-events exactly (verified
+// via browser inspection): a card-link per event with a stacked month/day
+// badge, no separate long-date text or per-event button.
 @block("theme:ctguns:upcoming-events", {
   description: "Upcoming events from discourse-post-event plugin",
   args: {
     title: { type: "string" },
     count: { type: "number", default: 5 },
-    buttonLabel: { type: "string", required: true },
-    linkLabel: { type: "string" },
-    linkUrl: { type: "string" },
   },
 })
 export default class BlockUpcomingEvents extends Component {
@@ -30,12 +29,12 @@ export default class BlockUpcomingEvents extends Component {
     return results.events.slice(0, count);
   }
 
-  getShortDate(startsAt) {
-    return shortDateNoYear(new Date(startsAt));
+  getMonth(startsAt) {
+    return new Date(startsAt).toLocaleDateString("en-US", { month: "short" }).toUpperCase();
   }
 
-  getLongDate(startsAt) {
-    return longDate(new Date(startsAt));
+  getDay(startsAt) {
+    return new Date(startsAt).getDate();
   }
 
   <template>
@@ -51,32 +50,28 @@ export default class BlockUpcomingEvents extends Component {
       </:empty>
 
       <:content as |events|>
-        <div class="block-upcoming-events__layout">
-          {{#if @title}}
-            <h2 class="block-upcoming-events__title">{{i18n (themePrefix @title)}}</h2>
-          {{/if}}
-          <div class="block-upcoming-events__list">
+        <section class="block-upcoming-events">
+          <header class="block-upcoming-events__header">
+            <span class="block-upcoming-events__header-icon" aria-hidden="true">{{dIcon "calendar"}}</span>
+            {{#if @title}}
+              <h3 class="block-upcoming-events__title">{{i18n (themePrefix @title)}}</h3>
+            {{/if}}
+          </header>
+
+          <div class="block-upcoming-events__body">
             {{#each events as |event|}}
-              <div class="block-upcoming-events__event">
-                <span class="block-upcoming-events__date-badge">
-                  {{this.getShortDate event.starts_at}}
-                </span>
-                <div class="block-upcoming-events__event-info">
-                  <h3 class="block-upcoming-events__event-title">
-                    {{or event.name event.post.topic.title}}
-                  </h3>
-                  <span class="block-upcoming-events__event-long-date">
-                    {{this.getLongDate event.starts_at}}
-                  </span>
+              <a class="block-upcoming-events__event" href={{event.post.url}}>
+                <div class="block-upcoming-events__date-badge" aria-hidden="true">
+                  <span class="block-upcoming-events__date-badge-month">{{this.getMonth event.starts_at}}</span>
+                  <span class="block-upcoming-events__date-badge-day">{{this.getDay event.starts_at}}</span>
                 </div>
-                <DButton class="btn-flat" @href={{event.post.url}} @translatedLabel={{i18n (themePrefix @buttonLabel)}} />
-              </div>
+                <h4 class="block-upcoming-events__event-title">
+                  {{or event.name event.post.topic.title}}
+                </h4>
+              </a>
             {{/each}}
           </div>
-          {{#if @linkUrl}}
-            <DButton class="btn-default block-upcoming-events__link" @href={{@linkUrl}} @translatedLabel={{i18n (themePrefix @linkLabel)}} />
-          {{/if}}
-        </div>
+        </section>
       </:content>
     </AsyncContent>
   </template>

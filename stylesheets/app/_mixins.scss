@@ -1,7 +1,9 @@
+// Matches meta.discourse.org's computed card style: white bg, 16px radius,
+// soft shadow instead of a border.
 @mixin card {
   background: var(--secondary);
-  border: 1px solid var(--primary-200);
   border-radius: var(--d-border-radius-large);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
