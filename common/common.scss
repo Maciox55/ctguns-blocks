@@ -1,0 +1,41 @@
+.ctguns-welcome-banner {
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.ctguns-category-cards {
+  display: flex;
+  gap: 0.75em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5em;
+
+  a {
+    padding: 0.75em 1.25em;
+    border-radius: 0.5em;
+    background: var(--primary-low);
+  }
+}
+
+.ctguns-latest-discussions,
+.ctguns-hot-topics,
+.ctguns-top-contributors,
+.ctguns-latest-events {
+  margin-bottom: 1.5em;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.4em 0;
+    border-bottom: 1px solid var(--primary-low);
+  }
+}
+
+.ctguns-top-contributors li {
+  display: flex;
+  justify-content: space-between;
+}
