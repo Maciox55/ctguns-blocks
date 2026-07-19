@@ -15,7 +15,6 @@ export default apiInitializer((api) => {
       id: "category-cards",
       args: {
         linkText: "category_cards.link_text",
-        count: 3,
       },
     },
     {

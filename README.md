@@ -21,6 +21,9 @@ Discourse theme component for CTGuns.org's custom homepage, built on the native 
 | Setting | Default | Description |
 | --- | --- | --- |
 | `cta_link` | `/signup` | URL for the CTA banner button |
+| `category_card_1/2/3` | _(empty)_ | Category picker for each homepage category card. Empty cards are skipped. |
+| `category_card_1/2/3_icon` | shield-check / circle-help / smartphone | Icon name for each card (Lucide name; needs the Discourse Lucide Icons component installed to render as Lucide) |
+| `category_card_1/2/3_color` | 2dd4bf / f472b6 / f87171 | Hex color (no `#`) for each card's icon badge |
 
 ## Known gaps
 

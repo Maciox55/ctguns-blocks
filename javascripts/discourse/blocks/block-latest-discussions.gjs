@@ -56,7 +56,9 @@ export default class BlockLatestDiscussions extends Component {
               {{/if}}
             </div>
           {{/if}}
-          <BasicTopicList @topics={{topics}} @showPosters="true" />
+          <div class="block-latest-discussions__card">
+            <BasicTopicList @topics={{topics}} @showPosters="true" />
+          </div>
         </div>
       </:content>
     </AsyncContent>

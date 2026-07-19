@@ -35,20 +35,38 @@
   &__search {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: var(--space-3);
     width: 100%;
-    max-width: 420px;
-    padding: 0.6em 1em;
-    border-radius: 2em;
+    max-width: 480px;
+    padding: 0.9em 1.25em;
+    border-radius: 999px;
     background: var(--secondary);
-    border: 1px solid var(--primary-200);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 
     input {
       flex: 1;
       border: none;
       background: transparent;
       outline: none;
+      font-size: var(--font-0);
     }
+  }
+
+  &__search-icon {
+    display: flex;
+    color: var(--primary-medium);
+    flex-shrink: 0;
+  }
+
+  &__search-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--primary-medium);
+    padding: 0;
+    flex-shrink: 0;
   }
 
   &__button {

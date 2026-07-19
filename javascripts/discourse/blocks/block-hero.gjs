@@ -34,8 +34,11 @@ export default class BlockHero extends Component {
           </p>
         {{/if}}
         <form class="block-hero__search" action="/search" method="get">
-          {{dIcon "magnifying-glass"}}
+          <span class="block-hero__search-icon">{{dIcon "magnifying-glass"}}</span>
           <input type="search" name="q" placeholder={{i18n (themePrefix "hero.search_placeholder")}} />
+          <button type="submit" class="block-hero__search-filter" aria-label={{i18n (themePrefix "hero.search_filters")}}>
+            {{dIcon "sliders-horizontal"}}
+          </button>
         </form>
         {{#if (and @buttonLink (not this.currentUser))}}
           <DButton

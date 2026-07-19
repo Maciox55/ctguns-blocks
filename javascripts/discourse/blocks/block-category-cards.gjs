@@ -1,43 +1,46 @@
 import Component from "@glimmer/component";
-import { service } from "@ember/service";
 import { block } from "discourse/blocks";
 import dIcon from "discourse/helpers/d-icon";
+import Category from "discourse/models/category";
 import { i18n } from "discourse-i18n";
 
-// ponytail: icons cycle through this fixed list by index, since categories
-// are dynamic (no per-category icon data available here). Names are Lucide
-// names -- install the "Discourse Lucide Icons" theme component for them to
-// actually render as Lucide instead of the closest Font Awesome match.
-const ICONS = ["shield-check", "life-buoy", "book-open"];
-
+// Cards are admin-picked via settings (category_card_1/2/3 + matching
+// _icon/_color settings), not auto-detected from site categories -- gives
+// full control over which 3 show and how they look, instead of guessing.
 @block("theme:ctguns:category-cards", {
-  description: "Row of category quick-links with icons",
+  description: "Row of admin-configured category quick-links with icons",
   args: {
     linkText: { type: "string" },
-    count: { type: "number", default: 3 },
   },
 })
 export default class BlockCategoryCards extends Component {
-  @service site;
-
-  get categories() {
-    return (this.site.categories || [])
-      .slice(0, this.args.count || 3)
-      .map((cat, i) => ({ cat, icon: ICONS[i % ICONS.length] }));
+  get cards() {
+    return [
+      { id: settings.category_card_1, icon: settings.category_card_1_icon, color: settings.category_card_1_color },
+      { id: settings.category_card_2, icon: settings.category_card_2_icon, color: settings.category_card_2_color },
+      { id: settings.category_card_3, icon: settings.category_card_3_icon, color: settings.category_card_3_color },
+    ]
+      .filter((card) => card.id)
+      .map((card) => ({ ...card, category: Category.findById(parseInt(card.id, 10)) }))
+      .filter((card) => card.category);
   }
 
   <template>
-    <div class="block-category-cards__layout">
-      {{#each this.categories as |entry|}}
-        <a class="block-category-cards__card" href="/c/{{entry.cat.slug}}/{{entry.cat.id}}">
-          {{dIcon entry.icon}}
-          <span class="block-category-cards__name">{{entry.cat.name}}</span>
-        </a>
-      {{/each}}
-    </div>
-    <a class="block-category-cards__all" href="/categories">
-      {{i18n (themePrefix @linkText)}}
-      {{dIcon "arrow-right"}}
-    </a>
+    {{#if this.cards}}
+      <div class="block-category-cards__layout">
+        {{#each this.cards as |card|}}
+          <a class="block-category-cards__card" href="/c/{{card.category.slug}}/{{card.category.id}}">
+            <span class="block-category-cards__icon" style="background-color: #{{card.color}}">
+              {{dIcon card.icon}}
+            </span>
+            <span class="block-category-cards__name">{{card.category.name}}</span>
+          </a>
+        {{/each}}
+      </div>
+      <a class="block-category-cards__all" href="/categories">
+        {{i18n (themePrefix @linkText)}}
+        {{dIcon "arrow-right"}}
+      </a>
+    {{/if}}
   </template>
 }

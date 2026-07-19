@@ -1,3 +1,33 @@
 cta_link:
   default: "/signup"
   type: string
+
+category_card_1:
+  default: ""
+  type: category
+category_card_1_icon:
+  default: "shield-check"
+  type: string
+category_card_1_color:
+  default: "2dd4bf"
+  type: string
+
+category_card_2:
+  default: ""
+  type: category
+category_card_2_icon:
+  default: "circle-help"
+  type: string
+category_card_2_color:
+  default: "f472b6"
+  type: string
+
+category_card_3:
+  default: ""
+  type: category
+category_card_3_icon:
+  default: "smartphone"
+  type: string
+category_card_3_color:
+  default: "f87171"
+  type: string

@@ -1,14 +1,21 @@
 .block-latest-discussions {
-  &__layout {
-    @include card;
-  }
-
   &__header {
-    @include card-header;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
   }
 
   &__title {
     @include section-title;
     font-size: var(--font-up-1);
+  }
+
+  &__link {
+    margin-left: auto;
+  }
+
+  &__card {
+    @include card;
   }
 }
