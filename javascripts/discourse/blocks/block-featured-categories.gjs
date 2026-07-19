@@ -4,6 +4,12 @@ import dIcon from "discourse/helpers/d-icon";
 import Category from "discourse/models/category";
 import { i18n } from "discourse-i18n";
 
+function hexToRgb(hex) {
+  const n = parseInt(hex, 16);
+  // eslint-disable-next-line no-bitwise
+  return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
+}
+
 // Cards are admin-picked via settings (category_card_1/2/3, category ID).
 // Icon and color come straight from the category's own `.icon`/`.color`
 // fields (Admin > Categories > edit category) -- matches meta.discourse.org's
@@ -16,12 +22,6 @@ import { i18n } from "discourse-i18n";
     linkText: { type: "string" },
   },
 })
-function hexToRgb(hex) {
-  const n = parseInt(hex, 16);
-  // eslint-disable-next-line no-bitwise
-  return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
-}
-
 export default class BlockCategoryCards extends Component {
   get cards() {
     return [settings.category_card_1, settings.category_card_2, settings.category_card_3]
