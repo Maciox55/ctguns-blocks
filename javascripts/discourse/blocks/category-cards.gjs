@@ -13,9 +13,12 @@ export default class CategoryCards extends Component {
   <template>
     <div class="ctguns-category-cards">
       {{#each this.categories as |cat|}}
-        <a class="ctguns-category-card" href="/c/{{cat.slug}}/{{cat.id}}">{{cat.name}}</a>
+        <a class="ctguns-category-card" href="/c/{{cat.slug}}/{{cat.id}}">
+          <span class="ctguns-category-icon" style="background-color: #{{cat.color}}"></span>
+          <span class="ctguns-category-name">{{cat.name}}</span>
+        </a>
       {{/each}}
-      <a class="ctguns-all-categories" href="/categories">All categories &rarr;</a>
     </div>
+    <a class="ctguns-all-categories" href="/categories">All categories &rarr;</a>
   </template>
 }
