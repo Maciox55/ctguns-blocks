@@ -5,6 +5,7 @@ en:
       cta_link: "URL for the call-to-action button"
   hero:
     title: "Welcome to CTGuns"
+    title_loggedin: "Welcome back, %{username}!"
     subtitle: "Connecticut's gun community — builds, classifieds, FFLs, and events."
     button_label: "Join now"
     search_placeholder: "Search"
