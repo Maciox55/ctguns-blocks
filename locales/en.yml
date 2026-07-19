@@ -3,13 +3,13 @@ en:
     description: "CTGuns.org custom homepage, built on the Blocks API"
     settings:
       cta_link: "URL for the call-to-action button"
-      category_card_1: "First category card"
+      category_card_1: "Category ID for the first category card (0 = hidden). Find the ID in the category's URL or admin edit page."
       category_card_1_icon: "Icon name for the first category card"
       category_card_1_color: "Background color (hex, no #) for the first card's icon"
-      category_card_2: "Second category card"
+      category_card_2: "Category ID for the second category card (0 = hidden)"
       category_card_2_icon: "Icon name for the second category card"
       category_card_2_color: "Background color (hex, no #) for the second card's icon"
-      category_card_3: "Third category card"
+      category_card_3: "Category ID for the third category card (0 = hidden)"
       category_card_3_icon: "Icon name for the third category card"
       category_card_3_color: "Background color (hex, no #) for the third card's icon"
   hero:

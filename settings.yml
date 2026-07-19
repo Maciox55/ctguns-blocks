@@ -3,8 +3,8 @@ cta_link:
   type: string
 
 category_card_1:
-  default: ""
-  type: category
+  default: 0
+  type: integer
 category_card_1_icon:
   default: "shield-check"
   type: string
@@ -13,8 +13,8 @@ category_card_1_color:
   type: string
 
 category_card_2:
-  default: ""
-  type: category
+  default: 0
+  type: integer
 category_card_2_icon:
   default: "circle-help"
   type: string
@@ -23,8 +23,8 @@ category_card_2_color:
   type: string
 
 category_card_3:
-  default: ""
-  type: category
+  default: 0
+  type: integer
 category_card_3_icon:
   default: "smartphone"
   type: string
