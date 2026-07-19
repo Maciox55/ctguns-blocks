@@ -15,4 +15,5 @@
 
 .welcome-banner__title {
   flex-grow: 0 !important;
+  font-size: clamp(2rem, 0.973rem + 3.286vw, 3.15rem) !important;
 }
