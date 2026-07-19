@@ -1,0 +1,18 @@
+// The active base theme (Horizon) makes .welcome-banner__wrap a row flex
+// container at desktop widths, putting the search bar beside the title.
+// Core's own default is already stacked (title, then search, block layout)
+// -- force that back regardless of viewport/container width so search
+// always sits below the title, matching meta.discourse.org.
+.welcome-banner__wrap {
+  flex-direction: column !important;
+}
+
+.welcome-banner .search-menu {
+  width: 100% !important;
+  max-width: 600px;
+  align-self: center;
+}
+
+.welcome-banner__title {
+  flex-grow: 0 !important;
+}
