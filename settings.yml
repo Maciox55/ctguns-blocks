@@ -1,0 +1,3 @@
+cta_link:
+  default: "/signup"
+  type: string

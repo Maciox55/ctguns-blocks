@@ -4,6 +4,15 @@
   "authors": "CTGuns",
   "theme_version": "0.1.0",
   "modifiers": {
-    "custom_homepage": true
+    "custom_homepage": true,
+    "svg_icons": [
+      "magnifying-glass",
+      "shield-check",
+      "life-buoy",
+      "book-open",
+      "arrow-right",
+      "headphones",
+      "house"
+    ]
   }
 }

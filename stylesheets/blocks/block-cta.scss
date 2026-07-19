@@ -1,0 +1,31 @@
+.block-cta {
+  &__layout {
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    padding: var(--space-6);
+    border-radius: var(--d-border-radius-large);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  &__title {
+    color: var(--secondary);
+  }
+
+  &__button {
+    background-color: var(--secondary);
+    color: var(--tertiary);
+    font-weight: 700;
+    padding: 0.75em 1.75em;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,20 @@
+.block-hot-topics {
+  &__layout {
+    @include card;
+  }
+
+  &__title {
+    @include card-header;
+    @include section-title;
+    font-size: var(--font-up-1);
+  }
+
+  &__list {
+    @include card-body;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}

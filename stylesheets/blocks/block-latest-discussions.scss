@@ -1,0 +1,14 @@
+.block-latest-discussions {
+  &__layout {
+    @include card;
+  }
+
+  &__header {
+    @include card-header;
+  }
+
+  &__title {
+    @include section-title;
+    font-size: var(--font-up-1);
+  }
+}

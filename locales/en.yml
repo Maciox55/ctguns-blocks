@@ -1,0 +1,34 @@
+en:
+  theme_metadata:
+    description: "CTGuns.org custom homepage, built on the Blocks API"
+    settings:
+      cta_link: "URL for the call-to-action button"
+  hero:
+    title: "Welcome to CTGuns"
+    subtitle: "Connecticut's gun community — builds, classifieds, FFLs, and events."
+    button_label: "Join now"
+    search_placeholder: "Search"
+  category_cards:
+    link_text: "All categories"
+  homepage:
+    latest_discussions:
+      title: "Latest Discussions"
+      link_text: "View all"
+    hot_topics:
+      title: "Hot topics"
+    leaderboard:
+      title: "Best Weekly Contributors"
+      button_label: "See leaderboard"
+    events:
+      title: "Latest events"
+      button_label: "Details"
+      link_label: "See all events"
+    cta:
+      title: "Secure by Design:"
+      description: "Our free guide to building privacy-focused communities"
+      button_label: "Download your copy"
+  watch_listen:
+    title: "Watch & Listen"
+    watch_now: "Watch now"
+  sidebar:
+    home_link: "Home"

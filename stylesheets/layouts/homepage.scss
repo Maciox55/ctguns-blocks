@@ -1,0 +1,59 @@
+.homepage-blocks {
+  &__layout {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "category-cards"
+      "latest-discussions"
+      "homepage-right"
+      "watch-listen"
+      "cta-banner";
+    margin-block: var(--space-6);
+  }
+
+  // ponytail: assumes core wraps homepage-blocks in a CSS container named
+  // "homepage-blocks" (matching the discourse-theme-skills reference theme).
+  // Verify on-site; if the query never matches, this just stays single-column.
+  @container homepage-blocks (width > 800px) {
+    &__layout {
+      grid-template-areas:
+        "category-cards category-cards"
+        "latest-discussions homepage-right"
+        "watch-listen watch-listen"
+        "cta-banner cta-banner";
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  &__block {
+    &--category-cards {
+      grid-area: category-cards;
+    }
+
+    &--latest-discussions {
+      grid-area: latest-discussions;
+    }
+
+    &--watch-listen {
+      grid-area: watch-listen;
+    }
+
+    &--cta-banner {
+      grid-area: cta-banner;
+    }
+  }
+
+  &__block-container {
+    &--homepage-right {
+      grid-area: homepage-right;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}

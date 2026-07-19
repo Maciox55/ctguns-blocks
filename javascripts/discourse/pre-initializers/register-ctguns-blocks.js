@@ -1,27 +1,27 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import WelcomeBanner from "../blocks/welcome-banner";
-import SearchBar from "../blocks/search-bar";
-import CategoryCards from "../blocks/category-cards";
-import LatestDiscussions from "../blocks/latest-discussions";
-import WatchListen from "../blocks/watch-listen";
-import CtaBanner from "../blocks/cta-banner";
-import HotTopics from "../blocks/hot-topics";
-import TopContributors from "../blocks/top-contributors";
-import LatestEvents from "../blocks/latest-events";
+import BlockHero from "../blocks/block-hero";
+import BlockCategoryCards from "../blocks/block-category-cards";
+import BlockLatestDiscussions from "../blocks/block-latest-discussions";
+import BlockHotTopics from "../blocks/block-hot-topics";
+import BlockWatchListen from "../blocks/block-watch-listen";
+import BlockCta from "../blocks/block-cta";
+import BlockLeaderboard from "../blocks/block-leaderboard";
+import BlockUpcomingEvents from "../blocks/block-upcoming-events";
+import BlockHomeLink from "../blocks/block-home-link";
 
 export default {
   before: "freeze-block-registry",
   initialize() {
     withPluginApi((api) => {
-      api.registerBlock(WelcomeBanner);
-      api.registerBlock(SearchBar);
-      api.registerBlock(CategoryCards);
-      api.registerBlock(LatestDiscussions);
-      api.registerBlock(WatchListen);
-      api.registerBlock(CtaBanner);
-      api.registerBlock(HotTopics);
-      api.registerBlock(TopContributors);
-      api.registerBlock(LatestEvents);
+      api.registerBlock(BlockHero);
+      api.registerBlock(BlockCategoryCards);
+      api.registerBlock(BlockLatestDiscussions);
+      api.registerBlock(BlockHotTopics);
+      api.registerBlock(BlockWatchListen);
+      api.registerBlock(BlockCta);
+      api.registerBlock(BlockLeaderboard);
+      api.registerBlock(BlockUpcomingEvents);
+      api.registerBlock(BlockHomeLink);
     });
   },
 };

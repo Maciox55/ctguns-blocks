@@ -1,0 +1,34 @@
+.block-watch-listen {
+  &__layout {
+    text-align: center;
+    margin: var(--space-6) 0;
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: var(--space-4);
+  }
+
+  &__grid {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    @include card;
+    width: 240px;
+    padding: var(--space-4);
+    text-align: left;
+  }
+
+  &__tag {
+    display: inline-block;
+    font-size: var(--font-down-1);
+    padding: 0.15em 0.6em;
+    border-radius: 1em;
+    background: var(--primary-low);
+    margin-top: var(--space-2);
+  }
+}
