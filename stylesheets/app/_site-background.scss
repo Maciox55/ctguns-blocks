@@ -1,0 +1,15 @@
+// Site-wide background image, set per light/dark mode via this component's
+// settings (site_background_light / site_background_dark).
+body {
+  background-image: url("#{$site-background-light}");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image: url("#{$site-background-dark}");
+  }
+}

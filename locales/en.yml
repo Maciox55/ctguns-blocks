@@ -2,6 +2,8 @@ en:
   theme_metadata:
     description: "CTGuns.org custom homepage, built on the Blocks API"
     settings:
+      site_background_light: "Site-wide background image URL (light mode)"
+      site_background_dark: "Site-wide background image URL (dark mode)"
       category_card_1: "Category ID for the first category card (0 = hidden). Find the ID in the category's URL or admin edit page. Icon/color come from the category's own settings."
       category_card_2: "Category ID for the second category card (0 = hidden)"
       category_card_3: "Category ID for the third category card (0 = hidden)"
