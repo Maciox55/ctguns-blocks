@@ -14,29 +14,35 @@ body {
   }
 }
 
-// #main-outlet(-wrapper) paints its own opaque background-color (core and/or
-// the active base theme) directly over body, hiding the image above.
-#main-outlet-wrapper,
-#main-outlet {
-  background: transparent !important;
-  border-radius: 0 !important;
-}
+// Everything below only applies outside /admin -- the admin dashboard relies
+// on #main-outlet(-wrapper)'s normal opaque background and left padding for
+// its own layout (card framing, content inset). Stripping those there left
+// admin pages with no padding at all.
+body:not(.admin-interface) {
+  // #main-outlet(-wrapper) paints its own opaque background-color (core
+  // and/or the active base theme) directly over body, hiding the image.
+  #main-outlet-wrapper,
+  #main-outlet {
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
 
-// Horizon's "rounded screen bezel" illusion: four fixed corner squares plus
-// a bottom bar, painted with the flat site background color so they blend
-// invisibly against a solid background. Against an image they show up as
-// solid black rounded shapes stuck to the viewport edges -- hide them.
-.experimental-screen__top-left,
-.experimental-screen__top-right,
-.experimental-screen__bottom-left,
-.experimental-screen__bottom-right,
-.experimental-screen__bottom-bar {
-  display: none !important;
-}
+  // Horizon's "rounded screen bezel" illusion: four fixed corner squares
+  // plus a bottom bar, painted with the flat site background color so they
+  // blend invisibly against a solid background. Against an image they show
+  // up as solid black rounded shapes stuck to the viewport edges.
+  .experimental-screen__top-left,
+  .experimental-screen__top-right,
+  .experimental-screen__bottom-left,
+  .experimental-screen__bottom-right,
+  .experimental-screen__bottom-bar {
+    display: none !important;
+  }
 
-// The wrap container's normal side padding (part of the same bezel-illusion
-// spacing) was invisible against a solid background; flush the sidebar to
-// the viewport edge now that the gap shows image texture instead.
-#main-outlet-wrapper {
-  padding-left: 0 !important;
+  // The wrap container's normal side padding (part of the same
+  // bezel-illusion spacing) was invisible against a solid background; flush
+  // the sidebar to the viewport edge now that the gap shows image texture.
+  #main-outlet-wrapper {
+    padding-left: 0 !important;
+  }
 }
