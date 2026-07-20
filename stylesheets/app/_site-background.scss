@@ -19,4 +19,24 @@ body {
 #main-outlet-wrapper,
 #main-outlet {
   background: transparent !important;
+  border-radius: 0 !important;
+}
+
+// Horizon's "rounded screen bezel" illusion: four fixed corner squares plus
+// a bottom bar, painted with the flat site background color so they blend
+// invisibly against a solid background. Against an image they show up as
+// solid black rounded shapes stuck to the viewport edges -- hide them.
+.experimental-screen__top-left,
+.experimental-screen__top-right,
+.experimental-screen__bottom-left,
+.experimental-screen__bottom-right,
+.experimental-screen__bottom-bar {
+  display: none !important;
+}
+
+// The wrap container's normal side padding (part of the same bezel-illusion
+// spacing) was invisible against a solid background; flush the sidebar to
+// the viewport edge now that the gap shows image texture instead.
+#main-outlet-wrapper {
+  padding-left: 0 !important;
 }
