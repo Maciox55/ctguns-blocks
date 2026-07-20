@@ -1,26 +1,15 @@
 // Site-wide background image, set per light/dark mode via this component's
-// settings (site_background_light / site_background_dark). Lives on a fixed
-// pseudo-element behind everything so the blur filter doesn't also blur
-// page content (a filter on body itself would blur its children too).
+// settings (site_background_light / site_background_dark).
 body {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: url("#{$site-background-light}");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(8px);
-    transform: scale(1.05); // hide the blur's soft edge past the viewport
-  }
+  background-image: url("#{$site-background-light}");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 @media (prefers-color-scheme: dark) {
-  body::before {
+  body {
     background-image: url("#{$site-background-dark}");
   }
 }
