@@ -38,11 +38,4 @@ body:not(.admin-interface) {
   .experimental-screen__bottom-bar {
     display: none !important;
   }
-
-  // The wrap container's normal side padding (part of the same
-  // bezel-illusion spacing) was invisible against a solid background; flush
-  // the sidebar to the viewport edge now that the gap shows image texture.
-  #main-outlet-wrapper {
-    padding-left: 0 !important;
-  }
 }

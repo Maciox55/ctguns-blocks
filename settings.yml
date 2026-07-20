@@ -1,10 +1,10 @@
 site_background_light:
   default: ""
-  type: string
+  type: upload
 
 site_background_dark:
   default: ""
-  type: string
+  type: upload
 
 category_card_1:
   default: 0
